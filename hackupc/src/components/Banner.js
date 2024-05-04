@@ -10,6 +10,7 @@ const Banner = ({ onNavigate }) => {
           <li><button onClick={() => onNavigate('home')}>Home</button></li>
           <li><button onClick={() => onNavigate('Alumno')}>Alumno</button></li>
           <li><button onClick={() => onNavigate('Admin')}>Admin</button></li>
+          <li><button onClick={() => onNavigate('Login')}>Login</button></li>
         </ul>
       </nav>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png" alt="Profile Pic" className="profile-pic" />

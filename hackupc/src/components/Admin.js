@@ -81,7 +81,7 @@ const Admin = () => {
       <h2>Admin</h2>
       {/* Casilla "Añadir Alumno" */}
       <div className="añadirAlumno" onClick={toggleMostrarAñadir}>
-        <p>Añadir Alumno</p>
+        <p> + Añadir Alumno</p>
       </div>
       {mostrarAñadir && (
         <div>
@@ -119,7 +119,7 @@ const Admin = () => {
 
       {/* Casilla "Eliminar Alumno" */}
       <div className="eliminarAlumno" onClick={toggleMostrarEliminar}>
-        <p>Eliminar Alumno</p>
+        <p>- Eliminar Alumno</p>
       </div>
       {mostrarEliminar && (
         <div>
