@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Home from './Home';
-import Alumno from './Alumno';
-import Admin from './Admin';
+import Home from './components/Home';
+import Alumno from './components/Alumno';
+import Admin from './components/Admin';
 import './App.css';
-import Banner from './Banner';
+import Banner from './components/Banner';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -23,16 +23,20 @@ function App() {
 
   const handleNavigation = (page) => {
     setCurrentPage(page);
+    window.history.pushState(null, '', `/${page}`);
   };
 
   return (
     <div className="App">
       <Banner onNavigate={handleNavigation} />
       <div className="content">
-        {renderPage()}
+        <div className="content-container">
+          {renderPage()}
+        </div>
       </div>
     </div>
   );
 }
+
 
 export default App;
