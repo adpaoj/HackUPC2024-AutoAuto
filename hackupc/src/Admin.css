@@ -1,0 +1,91 @@
+/* Estilos para el contenedor del título "Añadir Alumno" */
+.añadirAlumno {
+    cursor: pointer;
+    background-color: #ffffff;
+    padding: 3px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+  
+.añadirAlumno:hover {
+    background-color: #ffffff;
+}
+  
+.eliminarAlumno {
+    cursor: pointer;
+    background-color: #ffffff;
+    padding: 3px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 9px;
+  }
+  
+  .eliminarAlumno:hover {
+    background-color: #ffffff;
+  }
+  
+  /* Estilos para las entradas de texto */
+  .inputNombre,
+  .inputDni,
+  .inputCorreo,
+  .inputTelefon {
+    margin-bottom: 10px;
+    margin-left: 50px;
+    padding: 5px;
+    width: 85%;
+    border: 1px solid #ffffff;
+    border-radius: 9px;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .outputCorreo {
+    margin-bottom: 10px;
+    margin-left: 50px;
+    padding: 5px;
+    width: 85%;
+    border: 1px solid #ffffff;
+    border-radius: 9px;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .botonAñadir,
+  .botonEliminar {
+    background-color: #007bff;
+    color: #ffffff;
+    margin-left: 700px;
+    border: none;
+  
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .botonAñadir:hover {
+    background-color: #00448d;
+  }
+  
+  .botonEliminar:hover {
+    background-color: #00448d;
+  }
+  
+  .añadirAlumno:hover {
+    background-color: #d2d1d1;
+  }
+  
+  .eliminarAlumno:hover {
+    background-color: #d2d1d1;
+  }
+  
+  
+  
+  /* Estilos para el título "Admin" */
+  h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #ffffff;
+  }
+  
