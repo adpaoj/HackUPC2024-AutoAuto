@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
 import '../Admin.css'; // Importar el archivo CSS
+import { addUser, deleteUser } from '../dbOperations';
+
+async function crearUser(nombre, dni, correo, telefono) 
+{
+  const newUser = {id: dni, name: nombre, email: correo, phoneNumber: telefono};
+  const { data: addedUser, error: addUserError } = await addUser(newUser);
+  console.log('Added:', addedUser, 'Error:', addUserError);
+}
+
+async function eliminarUser(correo)
+{
+  const { data: deletedUser, error: deleteUserError } = await deleteUser(correo);
+  console.log('Deleted:', deletedUser, 'Error:', deleteUserError);
+}
 
 const Admin = () => {
   // Estado y funciones para "Añadir Alumno"
@@ -38,6 +52,7 @@ const Admin = () => {
     setCorreoAlumno('');
     setTelefonoAlumno('');
     setMostrarAñadir(false);
+    crearUser(nombreAlumno, dniAlumno, correoAlumno, telefonoAlumno);
   };
 
   // Estado y funciones para "Eliminar Alumno"
@@ -58,6 +73,7 @@ const Admin = () => {
     // Después de realizar la acción, puedes restablecer el campo del formulario y ocultar el formulario
     setcorreoAlumnoEliminar('');
     setMostrarEliminar(false);
+    eliminarUser(correoAlumnoEliminar);
   };
 
   return (

@@ -1,4 +1,4 @@
-import supabase from './supabaseconfig';
+import supabase from './supabaseConfig';
 
 // Añadir usuario
 async function addUser(user) {
