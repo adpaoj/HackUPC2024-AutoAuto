@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Home from './Home';
+import Alumno from './Alumno';
+import Admin from './Admin';
 import './App.css';
+import Banner from './Banner';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <Home />;
+      case 'Alumno':
+        return <Alumno />;
+      case 'Admin':
+        return <Admin />;
+      default:
+        return <Home />;
+    }
+  };
+
+  const handleNavigation = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Banner onNavigate={handleNavigation} />
+      <div className="content">
+        {renderPage()}
+      </div>
     </div>
   );
 }
