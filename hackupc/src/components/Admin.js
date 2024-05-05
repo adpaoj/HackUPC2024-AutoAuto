@@ -5,14 +5,24 @@ import { addUser, deleteUser } from '../dbOperations';
 async function crearUser(nombre, dni, correo, telefono) 
 {
   const newUser = {id: dni, name: nombre, email: correo, phoneNumber: telefono};
-  const { data: addedUser, error: addUserError } = await addUser(newUser);
-  console.log('Added:', addedUser, 'Error:', addUserError);
+  const result = await addUser(newUser);
+  if (result) {
+    const { data: addedUser, error: addUserError } = result;
+    console.log('Added:', addedUser, 'Error:', addUserError);
+  } else {
+    console.error('Error: addUser result is undefined');
+  }
 }
 
 async function eliminarUser(correo)
 {
-  const { data: deletedUser, error: deleteUserError } = await deleteUser(correo);
-  console.log('Deleted:', deletedUser, 'Error:', deleteUserError);
+  const result = await deleteUser(correo);
+  if (result) {
+    const { data: deletedUser, error: deleteUserError } = result;
+    console.log('Deleted:', deletedUser, 'Error:', deleteUserError);
+  } else {
+    console.error('Error: deleteUser result is undefined');
+  }
 }
 
 const Admin = () => {
@@ -45,14 +55,13 @@ const Admin = () => {
 
   const handleAgregarAlumno = () => {
     // Aquí puedes realizar cualquier acción necesaria, como enviar los datos del alumno a la base de datos
-
+    crearUser(nombreAlumno, dniAlumno, correoAlumno, telefonoAlumno);
     // Después de realizar la acción, puedes restablecer los campos del formulario y ocultar el formulario
     setNombreAlumno('');
     setDniAlumno('');
     setCorreoAlumno('');
     setTelefonoAlumno('');
     setMostrarAñadir(false);
-    crearUser(nombreAlumno, dniAlumno, correoAlumno, telefonoAlumno);
   };
 
   // Estado y funciones para "Eliminar Alumno"

@@ -2,11 +2,22 @@ import supabase from './supabaseConfig';
 
 // Añadir usuario
 async function addUser(user) {
-    const { data, error } = await supabase
-        .from('Users')
-        .insert([user]);
+    if (!user.id) {
+        console.error('Error: user must include a dni');
+        return;
+    }
 
-    return { data, error };
+    // Insertar el usuario con password igual al dni directamente
+    const { data: newUser, error: insertError } = await supabase
+        .from('Users')
+        .insert([{ ...user, password: user.id }])
+        .single();
+
+    if (insertError) {
+        console.error('Error inserting new user:', insertError);
+    } else {
+        console.log('User created:', newUser);
+    }
 }
 
 // Eliminar usuario
