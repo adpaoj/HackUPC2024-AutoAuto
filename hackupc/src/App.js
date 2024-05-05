@@ -5,6 +5,7 @@ import Admin from './components/Admin';
 import Login from './components/Login';
 import './App.css';
 import Banner from './components/Banner';
+import Calendario from './components/Calendario';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -17,8 +18,13 @@ function App() {
         return <Alumno />;
       case 'Admin':
         return <Admin />;
+
       case 'Login':
           return <Login />;
+
+      case 'Calendario':
+        return <Calendario />;
+
       default:
         return <Home />;        
     }
@@ -33,9 +39,11 @@ function App() {
     <div className="App">
       <Banner onNavigate={handleNavigation} />
       <div className="content">
+
         <div>
+
+
           {renderPage()}
-        </div>
       </div>
     </div>
   );

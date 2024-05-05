@@ -1,0 +1,35 @@
+select {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #e0dada;
+  }
+  
+  .calendario-container {
+    overflow-x: auto;
+    margin-left: 10px;
+  }
+  
+  .calendario {
+    display: grid;
+    grid-template-columns: 100px repeat(5, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    border: 2px solid #b6b1b100;
+  }
+  
+  .esquina {
+    border-right: 1px solid #cccccc00;
+    border-bottom: 1px solid #cccccc00;
+  }
+  
+  .dia, .hora, .celda {
+    border-right: 1.5px solid #000000;
+    border-bottom: 1.5px solid #000000;
+    color: #ffffff;
+    padding: 10px;
+    background-color: #ccc;
+  }
+  
+  .dia, .hora, .celda:hover {
+    background-color: #46464c00;
+  }
