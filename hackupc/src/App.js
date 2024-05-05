@@ -33,9 +33,7 @@ function App() {
     <div className="App">
       <Banner onNavigate={handleNavigation} />
       <div className="content">
-        <div className="content-container">
           {renderPage()}
-        </div>
       </div>
     </div>
   );

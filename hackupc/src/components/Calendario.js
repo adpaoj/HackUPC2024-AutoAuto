@@ -45,9 +45,9 @@ const Calendario = () => {
                   onChange={(e) => handleOptionChange(dia, hora, e.target.value)}
                 >
                   <option value=""></option>
-                  <option value="Opción 1">Opción 1</option>
-                  <option value="Opción 2">Opción 2</option>
-                  <option value="Opción 3">Opción 3</option>
+                  <option value="Opción 1">Alumno 1</option>
+                  <option value="Opción 2">Alumno 2</option>
+                  <option value="Opción 3">Alumno 3</option>
                 </select>
               </div>
             ))}

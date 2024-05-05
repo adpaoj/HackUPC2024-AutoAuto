@@ -9,7 +9,7 @@ const Banner = ({ onNavigate }) => {
         <ul className="nav-links">
           <li><button onClick={() => onNavigate('home')}>Home</button></li>
           <li><button onClick={() => onNavigate('Alumno')}>Alumno</button></li>
-          <li><button onClick={() => onNavigate('Admin')}>Admin</button></li>
+          <li><button onClick={() => onNavigate('Admin')}>Administrar usuarios</button></li>
           <li><button onClick={() => onNavigate('Calendario')}>Calendario</button></li>
         </ul>
       </nav>
