@@ -77,8 +77,8 @@ const Admin = () => {
   };
 
   return (
-    <div>
-      <h2>Admin</h2>
+    <div className='content-container-ad'>
+      <h2>Administrar usuarios</h2>
       {/* Casilla "Añadir Alumno" */}
       <div className="añadirAlumno" onClick={toggleMostrarAñadir}>
         <p>Añadir Alumno</p>
