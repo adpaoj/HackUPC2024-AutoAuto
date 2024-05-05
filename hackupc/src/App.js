@@ -4,6 +4,7 @@ import Alumno from './components/Alumno';
 import Admin from './components/Admin';
 import './App.css';
 import Banner from './components/Banner';
+import Calendario from './components/Calendario';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -16,6 +17,8 @@ function App() {
         return <Alumno />;
       case 'Admin':
         return <Admin />;
+      case 'Calendario':
+        return <Calendario />;
       default:
         return <Home />;
     }
