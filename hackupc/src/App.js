@@ -46,6 +46,7 @@ function App() {
           {renderPage()}
       </div>
     </div>
+    </div>
   );
 }
 
