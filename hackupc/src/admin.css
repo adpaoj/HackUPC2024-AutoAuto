@@ -1,13 +1,10 @@
 /* Estilos para el contenedor del título "Añadir Alumno" */
 .añadirAlumno {
-    width: 50%;
     cursor: pointer;
     background-color: #ffffff;
     padding: 3px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-radius: 9px;
-    margin: 0 auto;
-    font-size: 18px;
   }
   
 .añadirAlumno:hover {
@@ -15,16 +12,12 @@
 }
   
 .eliminarAlumno {
-
-    width: calc(50% - 5px);
     cursor: pointer;
     background-color: #ffffff;
     padding: 3px;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     border-radius: 9px;
-    margin: 0 auto;
-    font-size: 18px;
-    
   }
   
   .eliminarAlumno:hover {
@@ -86,18 +79,17 @@
   .eliminarAlumno:hover {
     background-color: #d2d1d1;
   }
-
-
-  .content-container-ad {
-    max-width: 1000px;
+  
+  .content-container {
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: #313133;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
   }
- 
-
+  
   /* Estilos para el título "Admin" */
   h2 {
     margin-bottom: 20px;
@@ -105,6 +97,3 @@
     color: #ffffff;
   }
   
-  p {
-    color: black;
-  }
