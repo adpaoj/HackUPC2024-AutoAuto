@@ -1,26 +1,41 @@
 import React, { useState } from 'react';
 import '../Login.css'
+import supabase from '../supabaseConfig';
 
 const Login = () => {
   // Estado y funciones para "Añadir Alumno"
   const [usuario, setUsuario] = useState('');
-  const [contraseña, setContraseña] = useState('');
+  const [contra, setContra] = useState('');
 
   const handleUsuarioChange = (event) => {
     setUsuario(event.target.value);
   };
 
-  const handleContraseñaChange = (event) => {
-    setContraseña(event.target.value);
+  const handlePasswordChange = (event) => {
+    setContra(event.target.value);
   };
 
-  const handleSubmit = () => {
-    // Aquí puedes realizar cualquier acción necesaria con el usuario y la contraseña, como autenticar al usuario
+  const handleSubmit = async () => {
+    try {
+      const response = await supabase.auth.signInWithPassword({
+        email: usuario,
+        password: contra
+      });
+  
+      const { user, error } = response;
 
-    // Después de realizar la acción, puedes restablecer los campos del formulario
+      if (error) {
+        console.error('Error de autenticación:', error.message);
+      } else {
+        console.log('Usuario autenticado:', user);
+        // Aquí podrías redirigir al usuario a otra página o cambiar el estado de la aplicación
+      }
+    } catch (e) {
+      console.error('Error al intentar iniciar sesión:', e.message);
+    }
+
     setUsuario('');
-    setContraseña('');
-    
+    setContra('');
   };
 
   return (
@@ -30,7 +45,7 @@ const Login = () => {
       <div className="login-container">
         <input
           type="text"
-          placeholder="Usuario"
+          placeholder="Correo electrónico"
           value={usuario}
           onChange={handleUsuarioChange}
           
@@ -38,8 +53,8 @@ const Login = () => {
         <input
           type="password"
           placeholder="Contraseña"
-          value={contraseña}
-          onChange={handleContraseñaChange}
+          value={contra}
+          onChange={handlePasswordChange}
         />
         <button onClick={handleSubmit}>Iniciar sesión</button>
       </div>
