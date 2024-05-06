@@ -5,7 +5,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin-bottom: 35px;
+
+
 }
 
 .nav-links {
@@ -17,7 +20,7 @@
 }
 
 .nav-links li {
-  margin-right: 0px;
+  margin-right: 10px;
 }
 
 .nav-links li:first-child {
